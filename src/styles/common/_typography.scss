@@ -1,0 +1,123 @@
+body {
+  font-feature-settings: 'cv05' on;
+}
+
+.heading {
+  @include font-weight(600);
+  color: color(text);
+
+  &--hero {
+    $size: 30;
+    $sizeLg: 50;
+    $sizeXl: 60;
+    @include font-size($size);
+    line-height: calc(#{$size}px + 8px);
+    margin: globalVars(ui-default-measure3x) 0;
+
+    @include lg-up {
+      @include font-size($sizeLg);
+      line-height: calc(#{$sizeLg}px + 8px);
+    }
+
+    @include xl-up {
+      @include font-size($sizeXl);
+      line-height: calc(#{$sizeXl}px + 8px);
+    }
+  }
+
+  &--primary {
+    $size: 26;
+    $sizeLg: 34;
+    @include font-size($size);
+    line-height: calc(#{$size}px + 8px);
+    margin: globalVars(ui-default-measure) 0;
+
+    @include lg-up {
+      @include font-size($sizeLg);
+      line-height: calc(#{$sizeLg}px + 8px);
+    }
+  }
+
+  &--secondary {
+    $size: 16;
+    @include font-size($size);
+    line-height: calc(#{$size}px + 8px);
+    margin: globalVars(ui-default-measure) 0;
+  }
+
+  &--tertiary {
+    $size: 14;
+    @include font-size($size);
+    line-height: calc(#{$size}px + 8px);
+    margin: globalVars(ui-default-measure) 0;
+  }
+
+  &--section {
+    $size: 24;
+    @include font-size($size);
+    line-height: calc(#{$size}px + 8px);
+    margin: globalVars(ui-default-measure) 0;
+  }
+
+  &--black {
+    color: black;
+  }
+}
+
+.copy {
+  $size: 16;
+  @include font($size);
+  line-height: calc(#{$size}px + 8px);
+  color: color(text-light);
+  margin: globalVars(ui-default-measure) 0;
+
+  &--small {
+    $size: 12;
+    @include font($size);
+    line-height: calc(#{$size}px + 8px);
+  }
+
+  &--large {
+    $size: 20;
+    @include font($size);
+    line-height: calc(#{$size}px + 8px);
+  }
+
+  &--color-light {
+    color: color(text);
+  }
+
+  &--bold {
+    @include font-weight(600);
+  }
+
+  &--black {
+    color: color(black);
+  }
+
+  &--accent {
+    color: color(accent);
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--prelabel {
+    color: color(light-blue);
+  }
+
+  &--underline-color {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      height: 4px;
+      background: color(orange);
+      width: 100%;
+    }
+  }
+}
